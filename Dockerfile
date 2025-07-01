@@ -7,8 +7,6 @@ RUN dnf -y makecache && \
         zsh \
         git \
         wget \
-        curl \
-        gradle \
         ripgrep \
         unzip \
         sudo && \
