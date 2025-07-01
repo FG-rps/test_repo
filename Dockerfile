@@ -18,7 +18,7 @@ RUN useradd -m -s /bin/zsh dev && \
     echo 'dev ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 ## Android-ndk stuff
-RUN mkdir /opt/
+RUN mkdir -p /opt/
 RUN wget -P /opt/ "https://dl.google.com/android/repository/android-ndk-r27c-linux.zip"
 RUN unzip /opt/android-ndk-r27c-linux.zip -d /opt/
 RUN rm -rf /opt/android-ndk-r27c-linux.zip
