@@ -1,7 +1,7 @@
 FROM fedora:latest
 
 # Update and install packages
-RUN dnf -y update && \
+RUN dnf -y makecache && \
     dnf -y install \
         axel \
         zsh \
