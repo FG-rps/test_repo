@@ -37,20 +37,6 @@ ENV PATH="/home/dev/.cargo/bin:${PATH}"
 # Set default shell
 SHELL ["/bin/zsh", "-c"]
 
-# Create SSH host keys if they don't exist (required)
-RUN ssh-keygen -A
-
-# Allow password auth (or configure keys)
-RUN sed -i 's/^#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config && \
-    sed -i 's/^#PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
-
-# Expose port 22
-EXPOSE 22
-
-# Start sshd by default when the container runs
-CMD ["/usr/sbin/sshd", "-D"]
-
-
 ## Add ohmyzsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
