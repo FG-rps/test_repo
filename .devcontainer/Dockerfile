@@ -23,7 +23,7 @@ RUN useradd -m -s /bin/zsh dev && \
 RUN mkdir /opt/
 RUN wget -P /opt/ "https://dl.google.com/android/repository/android-ndk-r27c-linux.zip"
 RUN unzip /opt/android-ndk-r27c-linux.zip -d /opt/
-RUN rm -rf repository/android-ndk-r27c-linux.zip
+RUN rm -rf /opt/android-ndk-r27c-linux.zip
 
 # Switch to the new user
 USER dev
