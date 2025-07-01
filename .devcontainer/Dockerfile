@@ -43,4 +43,4 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 RUN curl "https://raw.githubusercontent.com/FG-rps/test_repo/refs/heads/main/zshrc" > /home/dev/.zshrc
 
 ## setup android cross-compilation
-RUN rustup add-target aarch64-linux-android
+RUN rustup target add aarch64-linux-android
