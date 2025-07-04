@@ -9,7 +9,8 @@ RUN dnf -y makecache && \
         wget \
         ripgrep \
         unzip \
-        sshd \
+        openssh-server \
+        neovim \
         sudo && \
     dnf clean all && \
     rm -rf /var/cache/dnf
@@ -48,3 +49,13 @@ RUN curl "https://raw.githubusercontent.com/FG-rps/test_repo/refs/heads/main/zsh
 
 ## setup android cross-compilation
 RUN rustup target add aarch64-linux-android
+
+## Nvim stuff
+RUN mkdir -p ~/.local/share
+RUN mkdir -p ~/.local/share/fonts
+
+RUN curl "https://raw.githubusercontent.com/FG-rps/test_repo/refs/heads/main/CaskaydiaCoveNerdFont-Regular.ttf" > ~/.local/share/fonts/CaskaydiaCoveNerdFont-Regular.ttf
+RUN git clone https://github.com/LazyVim/starter ~/.config/nvim
+RUN rm ~/.config/nvim/init.lua
+RUN curl "https://raw.githubusercontent.com/FG-rps/test_repo/refs/heads/main/init.lua" > ~/.config/nvim/init.lua
+
