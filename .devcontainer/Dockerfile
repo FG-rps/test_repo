@@ -11,6 +11,9 @@ RUN dnf -y makecache && \
         unzip \
         openssh-server \
         neovim \
+        rust-analyzer \
+        clang \
+        gcc \
         sudo && \
     dnf clean all && \
     rm -rf /var/cache/dnf
