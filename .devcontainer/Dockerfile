@@ -14,7 +14,8 @@ RUN dnf -y makecache && \
         rust-analyzer \
         clang \
         gcc \
-        sudo && \
+        sudo \
+        java-latest-openjdk-devel && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
@@ -27,10 +28,6 @@ RUN mkdir -p /opt/
 RUN wget -P /opt/ "https://dl.google.com/android/repository/android-ndk-r27c-linux.zip"
 RUN unzip /opt/android-ndk-r27c-linux.zip -d /opt/
 RUN rm -rf /opt/android-ndk-r27c-linux.zip
-
-# Install Java JDK 17
-USER root
-RUN dnf install -y java-17-openjdk-devel
 
 # Environment variables for Android SDK
 ENV ANDROID_SDK_ROOT="/opt/android-sdk"
