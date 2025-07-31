@@ -47,7 +47,7 @@ RUN sdkmanager --sdk_root=${ANDROID_SDK_ROOT} \
     "platform-tools" \
     "platforms;android-34" \
     "build-tools;34.0.0" \
-    "ndk;27.3.11579264" \
+    "ndk;25.2.9519653" \
     "cmake;3.22.1"
 
 # Install Gradle
