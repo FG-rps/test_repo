@@ -2,9 +2,11 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - "*"  # This will trigger on push to any branch
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "*"  # This will trigger on pull request to any branch
 
 jobs:
 
